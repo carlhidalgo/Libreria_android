@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Librería</string>
+    <string name="app_bar_title">Librería</string>
+    <string name="detail_title">Detalle del libro</string>
+    <string name="book_cover_description">Portada del libro</string>
+    <string name="label_description">Descripción</string>
+    <string name="add_to_cart">Agregar al carrito</string>
+    <string name="add_to_cart_short">Agregar</string>
+    <string name="loading_books">Cargando libros...</string>
+    <string name="no_books_found">No se encontraron libros</string>
+    <string name="pull_to_refresh">Desliza para actualizar</string>
+    <string name="oops_error">¡Vaya!</string>
+    <string name="error_connection">Error de conexión</string>
+    <string name="retry">Reintentar</string>
+    <string name="search">Buscar libros</string>
+    <string name="cart_empty">Tu carrito está vacío</string>
+    <string name="cover">Portada</string>
+    <string name="cart">Carrito</string>
+    <string name="cart_badge_0">0</string>
+</resources>

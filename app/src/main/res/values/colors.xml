@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary colors -->
+    <color name="primary">#0D47A1</color>
+    <color name="primaryVariant">#0B3C91</color>
+    
+    <!-- Accent colors -->
+    <color name="accent">#FFB300</color>
+    
+    <!-- Background colors -->
+    <color name="background">#FFFFFF</color>
+    
+    <!-- Text colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#9E9E9E</color>
+    
+    <!-- Status colors -->
+    <color name="error">#D32F2F</color>
+    
+    <!-- Common colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>
