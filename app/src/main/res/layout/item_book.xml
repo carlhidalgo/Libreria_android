@@ -70,6 +70,7 @@
 
             <!-- Add to Cart Button -->
             <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button"
                 android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,10 +80,12 @@
                 app:icon="@android:drawable/ic_input_add"
                 app:iconGravity="start"
                 app:iconTint="@color/white"
-                android:backgroundTint="@color/accent"
-                android:insetLeft="8dp"
-                android:insetRight="8dp"
-                android:contentDescription="Agregar al carrito" />
+                app:backgroundTint="@color/accent_pink"
+                android:textColor="@color/white"
+                app:rippleColor="?attr/colorControlHighlight"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:contentDescription="@string/add_to_cart" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

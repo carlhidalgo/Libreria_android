@@ -3,6 +3,7 @@ package com.example.libreria
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.ScaleAnimation
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -53,17 +54,30 @@ class BookAdapter(
             holder.ivCover.setImageResource(R.mipmap.ic_launcher)
         }
 
-        // Improve button visibility: use primary color for icon tint
-        holder.btnAdd.iconTint = null
+        // Improve button visibility: use material button styling and white icon tint
+        val tint = ContextCompat.getColorStateList(context, R.color.white)
+        holder.btnAdd.iconTint = tint
         holder.btnAdd.setTextColor(ContextCompat.getColor(context, R.color.white))
         holder.btnAdd.setBackgroundColor(ContextCompat.getColor(context, R.color.accent))
 
         holder.itemView.setOnClickListener { onItemClick(book) }
 
         holder.btnAdd.setOnClickListener { view ->
-            // Lightweight feedback
+            // Prevent double taps quickly
             view.isEnabled = false
-            view.postDelayed({ view.isEnabled = true }, 300)
+            view.postDelayed({ view.isEnabled = true }, 500)
+
+            // Subtle scale animation for feedback
+            val anim = ScaleAnimation(
+                1.0f, 0.95f, 1.0f, 0.95f,
+                ScaleAnimation.RELATIVE_TO_SELF, 0.5f,
+                ScaleAnimation.RELATIVE_TO_SELF, 0.5f
+            )
+            anim.duration = 120
+            anim.fillAfter = true
+            view.startAnimation(anim)
+            view.postDelayed({ view.clearAnimation() }, 160)
+
             onAddClick(book)
         }
     }

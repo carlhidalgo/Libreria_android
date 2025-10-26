@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
                 putExtra("imageUrl", book.imageUrl)
                 putExtra("author", book.author)
                 putExtra("year", book.year)
+                putExtra("key", book.key)
+                putExtra("imageRes", book.imageRes)
             }
             startActivity(intent)
         }, onAddClick = { book ->
@@ -76,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             if (errorMsg != null) {
                 errorLayout.visibility = View.VISIBLE
                 emptyLayout.visibility = View.GONE
-                val tvError = findViewById<android.widget.TextView>(R.id.tvError)
+                val tvError = findViewById<TextView>(R.id.tvError)
                 tvError.text = errorMsg
             } else {
                 errorLayout.visibility = View.GONE
@@ -95,8 +97,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Observe cart and update toolbar subtitle with count
-        CartManager.items.observe(this) { items ->
-            val count = items.size
+        CartManager.items.observe(this) { cartItems ->
+            val count = CartManager.totalCount()
             supportActionBar?.subtitle = if (count > 0) "$count en carrito" else ""
             updateBadge(count)
         }

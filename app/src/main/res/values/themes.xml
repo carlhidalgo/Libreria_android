@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Theme.Libreria" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Ensure system bars are drawn by the window so fitsSystemWindows in layouts works -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>
